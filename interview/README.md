@@ -1,6 +1,6 @@
 ---
 sidebar: auto
-sidebarDepth: 2
+sidebarDepth: 3
 ---
 # 面试
 ## JS
@@ -127,10 +127,56 @@ var div1 = new Elem('div1')
 
 8. 变量提升
 
-- 创建一个新的空对象
-- [[prototype]]连接。即将空对象的原型，指向构造函数的 ``prototype`` 属性.
-- 将空对象绑定到构造函数内部的this。
-- 执行函数的代码。如果构造函数没有返回其他对象，那么返回这个新对象。
+
+### 工具函数
+
+1. 获取 2017-06-10 格式的日期
+``` js
+function formatDate(dt) {
+  if (!dt) {
+    dt = new Date()
+  }
+  var year = dt.getFullYear()
+  var month = dt.getMonth()
+  var date = dt.getDate()
+  function addZero(num) {
+    // if (num < 10) num = '0' + num
+    num = (num < 10) ? '0' + num : num
+    return num
+  }
+  month = addZero(month);
+  date = addZero(date);
+  return `${yrae}-${month}-${date}`
+  formatDate = formatDate()
+  console.log(formatDate)
+}
+```
+
+2. 获取随机数，要求长度一致的字符串格式
+``` js
+var random = Math.random()
+random = random + '0000000000'
+random = random.slice(0, 10)
+console.log(random)
+```
+
+3. 写一个能遍历对象和数组的通用函数
+```js
+function forEach(obj, fn) {
+  var key
+  if(obj instanceof Array) {
+    // 如果是数组
+    obj.forEach(function (item, index) {
+      fn(index, item)
+    })
+  } else {
+    // 如果是对象
+    for (key in obj) {
+      fn(key, obj[key])
+    }
+  }
+}
+```
 
 ### 执行上下文
 
