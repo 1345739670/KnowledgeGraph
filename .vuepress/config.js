@@ -32,7 +32,8 @@ module.exports = {
           collapsable: false,
           children: [
             'types',
-            'operator'
+            'operator',
+            'statement'
           ]
         }
       ],
