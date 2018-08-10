@@ -32,7 +32,9 @@ module.exports = {
           title: '标准库',
           collapsable: false,
           children: [
-            'array'
+            'array',
+            'date',
+            'math'
           ]
         }
       ],
