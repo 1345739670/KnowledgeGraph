@@ -213,6 +213,57 @@ function forEach(obj, fn) {
 - 网络请求： ajax 请求，动态 ``<img>``加载
 - 事件绑定
 
+### DOM
+
+1. DOM 是哪种基本的数据结构？
+树
+2. DOM 操作常用的 API 有哪些？
+- 新增节点
+  -  `document.createElement`
+  - `Element.appendChild`
+```js
+var div1 = document.createElement('div')
+var p1 = document.createElement('p')
+p1.innerHTML = 'this is p1'
+div1.appendChild(p1)
+```    
+      
+- 获取父元素和子元素
+  - `Element.parentElement`
+  - `Element.childNodes`
+```js
+var div1 = document.getElementById('div1')
+var parent = div1.parentElement
+var child = div1.childNodes
+```
+
+- 获取 attribute
+```js
+var p = document.getElementByTagName('p')[0]
+p.getAttribute('date-name')
+p.setAttribute('date-name', '123')
+p.getAttribute('style')
+p.setAttribute('style', 'font-size: 30px;')
+```
+
+- 获取 property
+```js
+var p = document.getElementByTagName('p')[0]
+console.log(p.style.width) // 获取样式
+p.style.width = '100px' // 修改样式
+p.className // 获取 class
+p.className = 'p1'
+console.log(p.nodeName) // 获取 nodeName
+console.log(p.nodeType) // 获取 nodeType
+```
+- 删除节点
+  - `Element.removeChild`
+```js
+div1.removeChild(child[0])
+```
+3. DOM 节点的 attribute 和 property 有何区别？
+- property 只是一个 JS 对象的属性的修改
+- attribute 是对 html 标签属性的修改
 
 
 
