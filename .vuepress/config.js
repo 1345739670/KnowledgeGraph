@@ -27,6 +27,15 @@ module.exports = {
       { text: '面试', link: '/interview/' },
     ],
     sidebar: { 
+      '/frontend/javascript/dom/': [
+        {
+          title: 'DOM',
+          collapsable: false,
+          children: [
+            'document'
+          ]
+        }
+      ],
       '/frontend/javascript/stdlib/': [
         {
           title: '标准库',
@@ -56,7 +65,8 @@ module.exports = {
             './javascript/basic/',
             './javascript/stdlib/',
             './javascript/features/',
-            './javascript/async/'
+            './javascript/async/',
+            './javascript/dom/'
           ]
         },
         {
