@@ -41,21 +41,48 @@ Date的实例对象，除了 `valueOf` 和 `toString` ，可以分为以下三�
 ### getFullYear
 返回4位数的年份
 ```js
-getFullYear() //2018
+var today = new Date();
+today.getFullYear() 
+//2018
 ```
 
 ### getMonth
 返回月份（0 - 11）。
+```js
+var today = new Date();
+today.getMonth()
+//7
+```
 
 ### getDate
 返回日（0 - 31）。
+```js
+var today = new Date();
+today.getDate()
+//11
+```
 
 ### getHours
 返回小时（0-23）。
+```js
+var today = new Date();
+today.getHours()
+//10
+```
 
 ### getMinutes
 返回分钟（0-59）。
+```js
+var today = new Date();
+today.getMinutes()
+//28
+```
 
 ### getSeconds
 返回秒（0-59）。
+```js
+var today = new Date();
+today.getSeconds()
+//12
+```
 
