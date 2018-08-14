@@ -265,8 +265,62 @@ div1.removeChild(child[0])
 - property 只是一个 JS 对象的属性的修改
 - attribute 是对 html 标签属性的修改
 
+### 事件
+1. 编写一个通用的事件监听函数
+```js
+function bingEvent(elem, type, selector, fn) {
+  if (fn === null) {
+    fn = selector
+    selector = null
+  }
+  elem.addEleventListener(type, function(e) {
+    var target
+    if (selector) {
+      target = e.target
+      if (target.matches(selector)) {
+        fn.call(target, e)
+      }
+    } else {
+      fn(e)
+    }
+  })
+}
+```
 
+2. 描述事件冒泡流程
 
+事件冒泡按照 DOM 树形结构进行。
+"DOM2级事件"规定的事件流有三个阶段:
+
+- **捕获阶段**：从 `document` 对象传导到触发事件的目标节点，遇到注册的捕获事件会触发。
+- **目标阶段**：在目标节点上触发注册的事件。
+- **冒泡阶段**：从目标节点传导回 `document` 对象。
+
+虽然"DOM2级事件"规定捕获阶段从 `document` 对象开始，以及冒泡阶段从 `document` 对象结束。但是支持 DON 事件流的浏览器都是从 `windows` 对象开始和结束。
+
+事件触发一般来说会按照上面的顺序进行，但是也有特例，如果给一个目标节点同时注册冒泡和捕获事件，事件触发会按照注册的顺序执行。
+
+3. 对于一个无线下拉加载图片的页面，如何给每个图片绑定事件。
+
+使用事件代理。
+
+### AJAX
+1. 手动编写一个 AJAX ,不依赖第三方库。
+```js
+var xhr = new XMLHttpRequest()
+xhr.open("get", "/api", false)
+xhr.onreadystatechange = function () {
+  // 异步执行代码
+  if (xhr.readyState == 4) {
+    if (xhr.status == 200) {
+      alert(xhr.responseText)
+    }
+  }
+}
+xhr.send(null)
+```
+### 跨域
+1. 跨域的几种实现方式
 ## CSS
 ### [基本概念](/frontend/JS)
 ## HTML

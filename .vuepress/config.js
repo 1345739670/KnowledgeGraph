@@ -27,6 +27,26 @@ module.exports = {
       { text: '面试', link: '/interview/' },
     ],
     sidebar: { 
+      '/frontend/javascript/bom/': [
+        {
+          title: 'BOM',
+          collapsable: false,
+          children: [
+            'xmlhttprequest',
+            'same-origin',
+          ]
+        }
+      ],
+      '/frontend/javascript/events/': [
+        {
+          title: '事件',
+          collapsable: false,
+          children: [
+            'eventtarget',
+            'model'
+          ]
+        }
+      ],
       '/frontend/javascript/dom/': [
         {
           title: 'DOM',
@@ -66,7 +86,9 @@ module.exports = {
             './javascript/stdlib/',
             './javascript/features/',
             './javascript/async/',
-            './javascript/dom/'
+            './javascript/dom/',
+            './javascript/events/',
+            './javascript/bom/'
           ]
         },
         {
