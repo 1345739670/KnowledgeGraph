@@ -294,19 +294,43 @@ setTimeout(function () {
 
 ## XMLHttpRequest 实例的事件
 
+### readyStateChange 事件
 
+readyState属性的值发生改变，就会触发 readyStateChange 事件。
 
+我们可以通过onReadyStateChange属性，指定这个事件的监听函数，对不同状态进行不同处理。
 
+### readyStateChange 事件
 
+上传文件时，XMLHTTPRequest 实例对象本身和实例的upload属性，都有一个progress事件，会不断返回上传的进度。
 
+### load 事件、error 事件、abort  事件
 
+- load 事件表示服务器传来的数据接收完毕，
+- error 事件表示请求出错，
+- abort 事件表示请求被中断（比如用户取消请求）。
 
+```js
+var xhr = new XMLHttpRequest();
 
+xhr.addEventListener('load', transferComplete);
+xhr.addEventListener('error', transferFailed);
+xhr.addEventListener('abort', transferCanceled);
 
+xhr.open();
 
+function transferComplete() {
+  console.log('数据接收完毕');
+}
 
+function transferFailed() {
+  console.log('数据接收出错');
+}
 
-
+function transferCanceled() {
+  console.log('用户取消接收');
+}
+```
 
 
 
