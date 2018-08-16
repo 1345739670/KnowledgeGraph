@@ -348,7 +348,64 @@ HTML5 专门为存储而设计，最大容量 5M
 
 API 简单易用：localStorage.setItem(key, value) localStorage.getItem(key);
 
+### 模块化
 
+1. AMD
+2. CommonJS
+3. AMD 和 CommonJS 的使用场景
+  - 需要异步加载JS，使用 AMD
+  - 使用 npm 之后建议使用 CommonJS。CommonJS 支持 npm。
+
+### 构建工具
+
+webpack 
+
+
+### 项目上线流程
+
+将测试完成的代码提交到 git 版本库的 master 分支
+
+将当前服务器的代码全部打包并记录版本号，备份
+
+将打包压缩后 master 分支的代码提交覆盖到线上服务器，生成新的版本号
+
+### 项目上线回滚
+
+将当前服务器的代码打包并记录版本号，备份
+
+将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号。
+
+### Linux 基本命令
+- server 版，只有命令行。
+- 测试环境需要匹配线上环境，因此也是Linux。
+
+### 页面渲染
+
+1. 从输入 url 到得到 html 的详细过程
+- 浏览器根据 DNS 服务器的到域名 IP 地址
+- 向这个 IP 的机器发送 http 请求
+- 服务器收到、处理并返回 http 请求
+- 浏览器得到返回的内容
+
+2. 浏览器渲染页面的过程
+- 根据 HTML 结构生成 DOM Tree
+- 根据 CSS 生成 CSSOM
+- 将 DOM 和 CSSOM 整合形成 RenderTree
+- 根据 RenderTree 开始渲染和展示
+- 遇到 `<script>` 时，会执行并阻塞渲染
+3. window.onload 和 DOMContentLoaded 的区别
+```js
+window.addEleventListener('load', function () {
+  // 页面所有资源加载完毕才会执行，包括图片、视频
+})
+document.addEleventListener('DOMContentLoaded', function () {
+  // DOM 渲染完毕即可执行，此时图片、视频还可能没有加载完
+})
+```
+4. 为什么把 CSS 放到 header
+5. 为什么把 js 放到 body 即将结束的位置
+
+### 资源合并
 ## CSS
 ### [基本概念](/frontend/JS)
 ## HTML
