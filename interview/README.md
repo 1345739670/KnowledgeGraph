@@ -321,6 +321,34 @@ xhr.send(null)
 ```
 ### 跨域
 1. 跨域的几种实现方式
+
+### 存储
+
+1. 请描述一下 cookie ，sessionStorge 和 localStorage 的区别
+
+- cookie
+
+本身用于客户端和服务端通信
+
+但是它有本地存储的功能，所以在 HTML5 之前被用来存储本地信息。
+
+使用 document.cookie = ... 获取和修改
+
+缺点：
+
+每个 Cookie 的大小一般不能超过4KB。
+
+浏览器每次向服务器发送http请求，就会自动附上这段信息，会影响获取资源的速率。
+
+API 简单，需要封装才能用 document.cookie = ...
+
+- localStorage 和 sessionStorage
+
+HTML5 专门为存储而设计，最大容量 5M
+
+API 简单易用：localStorage.setItem(key, value) localStorage.getItem(key);
+
+
 ## CSS
 ### [基本概念](/frontend/JS)
 ## HTML

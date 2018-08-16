@@ -34,7 +34,8 @@ module.exports = {
           children: [
             'xmlhttprequest',
             'same-origin',
-            'storage'
+            'storage',
+            'cookie',
           ]
         }
       ],
