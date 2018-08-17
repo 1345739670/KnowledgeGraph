@@ -406,6 +406,49 @@ document.addEleventListener('DOMContentLoaded', function () {
 5. 为什么把 js 放到 body 即将结束的位置
 
 ### 资源合并
+### XSS
+- 前端替换关键字，例如，对于引号，尖括号，斜杠进行转义
+- 后端替换
+### XSRF
+- 增加验证流程，如输入指纹、密码、短信验证码
+### ES6
+1. ES6 模块化如何使用
+- import 和 export
+- 使用 Babel:
+  -  `npm init`
+  - `npm install --save-dev babel-core babel-preset-es2015 babel-preset=latest`
+  - 创建 .babelrc 文件
+  - `npm install --global babel=cli`
+- webpack
+  - `npm install webpack babel-loader --save-dev`
+  - 配置 webpack.config.js 文件
+  - 配置 package.json 文件中的 script
+  - 运行 `npm start`
+2. 开发环境如何打包
+rollup:
+- `npm init` 
+- `npm i rollup rollup-plugin-node-resolve rollup-plugin-babel babel-plugin-external-helpers babel-preset-latest  --save-dev`
+- 配置  .babelrc
+- 配置  rollup.config.js
+- 将 webpack 环境的 JS 代码拷贝过来
+- 修改 package.json 的 scripts
+- 运行 npm start
+3. Class 和普通构造函数有何区别
+- Class 在语法上更贴近面向对象的写法
+- Class 实现继承更加易读、易理解
+- 更易与写 java 等后端的使用
+- Class本质还是语法糖，使用 prototype
+4. Promise 的基本使用和原理
+5. 总结一下 ES6 其他的常用功能
+- let/const
+- 多行字符串/模板变量
+- 解构赋值
+- 块级作用域
+- 函数默认参数
+- 箭头函数
+
+
+### 原型的实际应用
 ## CSS
 ### [基本概念](/frontend/JS)
 ## HTML
